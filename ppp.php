@@ -16,11 +16,11 @@ $payerLastName=$_REQUEST['payerLastName'];
 $disallowRememberedCards='true';
 $rememberedCards='';
 $paypalMode='sandbox';
-$clientId= 'AdLP7TfHOHls5OU6jM-hxJtfJCJLF599FsAhkpCrkhKw5FOKNa1PrCJ8cbiyNurH97bM4T7Tf5OL5c_v';
-$secret='EBoFU50fW9Bd0-VM0eDMihyDMlt-fyxrGzOcjKspOF_dcYYz2DwJYoStqM8mCcA1yESJjZSB5il4WwWl';
-$returnUrl='http://ejemplo.com/plus7/ppp.php';
-$cancelUrl='http://ejemplo.com/plus7/ppp.php';
-$ppplusJsLibraryLang='en_US';
+$clientId= 'AZAA6JMVn1W2ri1-h4KAMh0GwStdT1PlmCwEgUX-9p1uYD8bgRcuGCrxr4jfh89T8Rd1CkyRk2sm3SU9';
+$secret='EPDX5Ee-0g3YL1cWMD2fdySX7B7Xjl1YqWiWVQM2DrqVIiwPFmvR0p2xvr9dTyeM3pEEwT3NhzIMVin5';
+$returnUrl='http://localhost/ExecutePayment.php';
+$cancelUrl='http://localhost/ExecutePayment.php';
+$ppplusJsLibraryLang='pt_BR';
 $currency=$_REQUEST['currency'];
 $iframeHeight='';
 $merchantInstallmentSelection='1';
@@ -176,7 +176,7 @@ $json_resp = stripslashes(json_format($json_resp));
     <div class="container">
 
         <h1 class="page-header">
-            Payments
+            Pagamentos
         </h1>
 
         <div class="row" style="">
@@ -209,14 +209,14 @@ $json_resp = stripslashes(json_format($json_resp));
 
                 <div class="col-md-6">
 
-                    <h2>Details</h2>
+                    <h2>Detalhes</h2>
 
                         <div class="form-group" id="shipping-address-group">
                             <table class="table table-striped">
                                 <tr>
-                                    <td>Product</td>
-                                    <td>Quantity</td>
-                                    <td>Price</td>
+                                    <td>Produto</td>
+                                    <td>Quantidade</td>
+                                    <td>Preço</td>
                                 </tr>
 
                                     <tr>
@@ -229,10 +229,10 @@ $json_resp = stripslashes(json_format($json_resp));
                         </div>
 
                         <div class="form-group" id="shipping-address-group">
-                            <label class="control-label">Datos del cliente</label>
+                            <label class="control-label">Dados do cliente</label>
                             <table class="table table-striped">
                                 <tr>
-                                    <td>Name:</td>
+                                    <td>Nome:</td>
                                     <td><?php echo $payerFirstName ." " . $payerLastName ?></td>
                                 </tr>
                                 <tr>
@@ -240,7 +240,7 @@ $json_resp = stripslashes(json_format($json_resp));
                                     <td><?php echo $payerEmail ?></td>
                                 </tr>
                                 <tr>
-                                    <td>Phone:</td>
+                                    <td>Telefone:</td>
                                     <td><?php echo $payerPhone ?></td>
                                 </tr>
                             </table>
@@ -249,14 +249,14 @@ $json_resp = stripslashes(json_format($json_resp));
 
                         <br />
 
-                    <p><strong>Click to continue:</strong></p>
+                    <p><strong>Clique para continuar:</strong></p>
                     <button
                       type="submit"
                       id="continueButton"
                       class="btn btn-lg btn-primary btn-block infamous-continue-button"
                       onclick="ppp.doContinue(); return false;">
                         
-                        Continue
+                        Continuar
                     </button>
 
                 </div><!-- col -->
@@ -303,7 +303,7 @@ $json_resp = stripslashes(json_format($json_resp));
                 var msg = jQuery("#responseOnError").html()  + "<BR />" + JSON.stringify(err);
                 jQuery("#responseOnError").html(msg);
             },
-            country: "MX",
+            country: "BR",
             language: "<?php echo $ppplusJsLibraryLang; ?>",
             disallowRememberedCards: "<?php echo $disallowRememberedCards; ?>",
             rememberedCards: "<?php echo $rememberedCards; ?>",
